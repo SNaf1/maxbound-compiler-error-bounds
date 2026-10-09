@@ -1,0 +1,21 @@
+{
+  "name": "dacorvo/mnist-mlp, torch.compile (Inductor, CPU)",
+  "model": {
+    "id": "dacorvo/mnist-mlp",
+    "revision": "7ed1e96d182395fd7380ea8495b9eb2364ce9dc1",
+    "trust_remote_code": true
+  },
+  "inputs": {
+    "repo": "ylecun/mnist",
+    "file": "mnist/test-00000-of-00001.parquet",
+    "revision": "77f3279092a1c1579b2250db8eafed0ad422088c",
+    "start": 0,
+    "count": 50,
+    "normalize": [0.1307, 0.3081]
+  },
+  "compiler": {"name": "torch_compile", "args": {}},
+  "domain": {"eps_pixels": [0.0, 0.01]},
+  "maxbound": {"method": "best", "fp_model": "auto"},
+  "checks": {"samples": 1000, "attack_steps": 50, "attack_restarts": 1},
+  "also_logits": true
+}

@@ -1,0 +1,22 @@
+name: tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install CPU PyTorch and the package
+        run: |
+          pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          pip install -e ".[hf,dev]"
+      - name: Tests (including torch.compile, which uses the runner's g++, and the Hugging Face model)
+        run: pytest -q -rs
+      - name: Planted-bug check
+        run: python tools/mutation_check.py
+      - name: Quickstart
+        run: python examples/quickstart.py

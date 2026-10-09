@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "maxbound"
+version = "0.1.0"
+description = "Sound upper bounds on the output difference between a neural network and its compiled version over an input region."
+readme = "README.md"
+requires-python = ">=3.12"
+# Exact versions this package was developed and tested with (Python 3.12.10, Windows 10, CPU).
+dependencies = [
+    "torch==2.14.1",
+    "numpy==2.5.3",
+]
+
+[project.optional-dependencies]
+# Needed for the Hugging Face example, the experiment runner and the network tests.
+hf = [
+    "transformers==5.19.0",
+    "huggingface_hub==1.33.0",
+    "safetensors==0.8.0",
+    "pyarrow==25.0.1",
+    "pillow==12.3.0",
+]
+dev = ["pytest==9.1.1"]
+
+[project.scripts]
+maxbound = "maxbound.experiment:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "network: test downloads a model or dataset from the Hugging Face Hub",
+]
