@@ -1,0 +1,3730 @@
+{
+ "config": {
+  "name": "dacorvo/mnist-mlp, torch.compile (Inductor, CPU)",
+  "model": {
+   "id": "dacorvo/mnist-mlp",
+   "revision": "7ed1e96d182395fd7380ea8495b9eb2364ce9dc1",
+   "trust_remote_code": true
+  },
+  "inputs": {
+   "repo": "ylecun/mnist",
+   "file": "mnist/test-00000-of-00001.parquet",
+   "revision": "77f3279092a1c1579b2250db8eafed0ad422088c",
+   "start": 0,
+   "count": 50,
+   "normalize": [
+    0.1307,
+    0.3081
+   ]
+  },
+  "compiler": {
+   "name": "torch_compile",
+   "args": {}
+  },
+  "domain": {
+   "eps_pixels": [
+    0.0,
+    0.01
+   ]
+  },
+  "maxbound": {
+   "method": "best",
+   "fp_model": "auto"
+  },
+  "checks": {
+   "samples": 1000,
+   "attack_steps": 50,
+   "attack_restarts": 1
+  },
+  "also_logits": true
+ },
+ "environment": {
+  "maxbound": "0.1.0",
+  "python": "3.12.10",
+  "torch": "2.14.1+cpu",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "processor": "AMD64 Family 25 Model 33 Stepping 2, AuthenticAMD",
+  "float32_matmul_precision": "highest",
+  "threads": 8
+ },
+ "rows": [
+  {
+   "eps_pixels": 0.0,
+   "image": 0,
+   "label": 7,
+   "output": "model",
+   "bound": 1.587466550954654e-05,
+   "real": 0.0,
+   "fp_allowance": 1.587466550954652e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 5.765071222126223e-17,
+    "interval-separate": 5.775891389499241e-17
+   },
+   "certified_class": 7,
+   "seconds": 0.16282179998233914
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 0,
+   "label": 7,
+   "output": "logits",
+   "bound": 0.2017041357800424,
+   "real": 0.0,
+   "fp_allowance": 0.20170413578004215,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.3322184180863525e-10,
+    "interval-separate": 1.334725084121155e-10
+   },
+   "certified_class": 7,
+   "seconds": 0.15581950001069345
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 1,
+   "label": 2,
+   "output": "model",
+   "bound": 1.9509529887513376e-05,
+   "real": 0.0,
+   "fp_allowance": 1.9509529887513353e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.5444456932888735e-16,
+    "interval-separate": 1.5474188113220377e-16
+   },
+   "certified_class": 2,
+   "seconds": 0.1789565000217408
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 1,
+   "label": 2,
+   "output": "logits",
+   "bound": 0.24790350432048944,
+   "real": 0.0,
+   "fp_allowance": 0.24790350432048913,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.8000702556197132e-10,
+    "interval-separate": 1.8035268092930384e-10
+   },
+   "certified_class": 2,
+   "seconds": 0.15772370001650415
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 2,
+   "label": 1,
+   "output": "model",
+   "bound": 4.8756674539986854e-05,
+   "real": 0.0,
+   "fp_allowance": 4.875667453998679e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.485299964649086e-14,
+    "interval-separate": 2.4897529762605942e-14
+   },
+   "certified_class": 1,
+   "seconds": 0.16341700000339188
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 2,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.1736424352205367,
+   "real": 0.0,
+   "fp_allowance": 0.1736424352205365,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.4501732787636495e-10,
+    "interval-separate": 1.4527749617113363e-10
+   },
+   "certified_class": 1,
+   "seconds": 0.1577347999846097
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 3,
+   "label": 0,
+   "output": "model",
+   "bound": 1.4271024321083854e-05,
+   "real": 0.0,
+   "fp_allowance": 1.4271024321083837e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 8.16972296694936e-18,
+    "interval-separate": 8.185384614113348e-18
+   },
+   "certified_class": 0,
+   "seconds": 0.1775086000270676
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 3,
+   "label": 0,
+   "output": "logits",
+   "bound": 0.28244102984790875,
+   "real": 0.0,
+   "fp_allowance": 0.28244102984790836,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.89268181763422e-10,
+    "interval-separate": 1.8963080265306585e-10
+   },
+   "certified_class": 0,
+   "seconds": 0.16355679999105632
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 4,
+   "label": 4,
+   "output": "model",
+   "bound": 2.7878831691656503e-05,
+   "real": 0.0,
+   "fp_allowance": 2.787883169165647e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 6.061907877046832e-15,
+    "interval-separate": 6.0733476393460095e-15
+   },
+   "certified_class": 4,
+   "seconds": 0.16871110000647604
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 4,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.2050490620019955,
+   "real": 0.0,
+   "fp_allowance": 0.20504906200199524,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.0261842735710547e-10,
+    "interval-separate": 1.0281227714074154e-10
+   },
+   "certified_class": 4,
+   "seconds": 0.16028270000242628
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 5,
+   "label": 1,
+   "output": "model",
+   "bound": 1.973033244969658e-05,
+   "real": 0.0,
+   "fp_allowance": 1.9730332449696555e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 3.7028969794220734e-15,
+    "interval-separate": 3.70972115658113e-15
+   },
+   "certified_class": 1,
+   "seconds": 0.17095050000352785
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 5,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.19373135123236698,
+   "real": 0.0,
+   "fp_allowance": 0.19373135123236673,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.5509414064147377e-10,
+    "interval-separate": 1.5538034411355874e-10
+   },
+   "certified_class": 1,
+   "seconds": 0.16526030001114123
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 6,
+   "label": 4,
+   "output": "model",
+   "bound": 5.233550626720102e-05,
+   "real": 0.0,
+   "fp_allowance": 5.233550626720095e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.038167731001512e-14,
+    "interval-separate": 2.041982656951142e-14
+   },
+   "certified_class": 4,
+   "seconds": 0.17006919998675585
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 6,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.2111749806197788,
+   "real": 0.0,
+   "fp_allowance": 0.21117498061977855,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.3426400373587352e-10,
+    "interval-separate": 1.3451549604568302e-10
+   },
+   "certified_class": 4,
+   "seconds": 0.15529379999497905
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 7,
+   "label": 9,
+   "output": "model",
+   "bound": 1.6109065979669212e-05,
+   "real": 0.0,
+   "fp_allowance": 1.610906597966919e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.7399618916037578e-15,
+    "interval-separate": 1.7432178791064036e-15
+   },
+   "certified_class": 9,
+   "seconds": 0.1685189999989234
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 7,
+   "label": 9,
+   "output": "logits",
+   "bound": 0.2175546547881267,
+   "real": 0.0,
+   "fp_allowance": 0.2175546547881264,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.3497861856133164e-10,
+    "interval-separate": 1.3523158596169151e-10
+   },
+   "certified_class": 9,
+   "seconds": 0.1715703000081703
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 8,
+   "label": 5,
+   "output": "model",
+   "bound": 0.004376951072940618,
+   "real": 0.0,
+   "fp_allowance": 0.004376951072940612,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.3498035723504714e-12,
+    "interval-separate": 2.3542210031504436e-12
+   },
+   "certified_class": 6,
+   "seconds": 0.1755467999901157
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 8,
+   "label": 5,
+   "output": "logits",
+   "bound": 0.25284659952146266,
+   "real": 0.0,
+   "fp_allowance": 0.2528465995214623,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.7678634588946338e-10,
+    "interval-separate": 1.771184838527273e-10
+   },
+   "certified_class": 6,
+   "seconds": 0.1692367999930866
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 9,
+   "label": 9,
+   "output": "model",
+   "bound": 0.0003536026882765151,
+   "real": 0.0,
+   "fp_allowance": 0.0003536026882765147,
+   "found": 9.094947017729282e-13,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.6980742176526133e-13,
+    "interval-separate": 1.7013786319090568e-13
+   },
+   "certified_class": 9,
+   "seconds": 0.16631090000737458
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 9,
+   "label": 9,
+   "output": "logits",
+   "bound": 0.2595738425699291,
+   "real": 0.0,
+   "fp_allowance": 0.25957384256992877,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.6642225086435853e-10,
+    "interval-separate": 1.667458076711003e-10
+   },
+   "certified_class": 9,
+   "seconds": 0.15803970000706613
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 10,
+   "label": 0,
+   "output": "model",
+   "bound": 1.46925164939365e-05,
+   "real": 0.0,
+   "fp_allowance": 1.4692516493936481e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 8.460758444814565e-17,
+    "interval-separate": 8.477198487641062e-17
+   },
+   "certified_class": 0,
+   "seconds": 0.1786800999834668
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 10,
+   "label": 0,
+   "output": "logits",
+   "bound": 0.2431336574428237,
+   "real": 0.0,
+   "fp_allowance": 0.2431336574428234,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.4531416911202748e-10,
+    "interval-separate": 1.4559577936193494e-10
+   },
+   "certified_class": 0,
+   "seconds": 0.167025000002468
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 11,
+   "label": 6,
+   "output": "model",
+   "bound": 5.037486896506559e-05,
+   "real": 0.0,
+   "fp_allowance": 5.037486896506553e-05,
+   "found": 4.336808689942018e-19,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.118915501089805e-14,
+    "interval-separate": 2.1229316737364546e-14
+   },
+   "certified_class": 6,
+   "seconds": 0.17305719997966662
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 11,
+   "label": 6,
+   "output": "logits",
+   "bound": 0.234898679580093,
+   "real": 0.0,
+   "fp_allowance": 0.23489867958009272,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.6558417032672373e-10,
+    "interval-separate": 1.6589829662979654e-10
+   },
+   "certified_class": 6,
+   "seconds": 0.1674009999842383
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 12,
+   "label": 9,
+   "output": "model",
+   "bound": 6.437183024366005e-05,
+   "real": 0.0,
+   "fp_allowance": 6.437183024365997e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.9581058723298547e-14,
+    "interval-separate": 2.9636225223587905e-14
+   },
+   "certified_class": 9,
+   "seconds": 0.17316570002003573
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 12,
+   "label": 9,
+   "output": "logits",
+   "bound": 0.22233093930886144,
+   "real": 0.0,
+   "fp_allowance": 0.22233093930886116,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.6315934051255687e-10,
+    "interval-separate": 1.634638953981116e-10
+   },
+   "certified_class": 9,
+   "seconds": 0.1625466999830678
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 13,
+   "label": 0,
+   "output": "model",
+   "bound": 1.4719996688708429e-05,
+   "real": 0.0,
+   "fp_allowance": 1.471999668870841e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.975298224883519e-17,
+    "interval-separate": 2.9810255721938224e-17
+   },
+   "certified_class": 0,
+   "seconds": 0.17799739999463782
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 13,
+   "label": 0,
+   "output": "logits",
+   "bound": 0.24663628873727947,
+   "real": 0.0,
+   "fp_allowance": 0.24663628873727916,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.3939703088842957e-10,
+    "interval-separate": 1.396650517589422e-10
+   },
+   "certified_class": 0,
+   "seconds": 0.15455370000563562
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 14,
+   "label": 1,
+   "output": "model",
+   "bound": 1.652716927815944e-05,
+   "real": 0.0,
+   "fp_allowance": 1.6527169278159418e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 8.389267605425799e-17,
+    "interval-separate": 8.405166168466469e-17
+   },
+   "certified_class": 1,
+   "seconds": 0.17085719999158755
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 14,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.20930185165006043,
+   "real": 0.0,
+   "fp_allowance": 0.20930185165006018,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.6853839922944218e-10,
+    "interval-separate": 1.6885838444374497e-10
+   },
+   "certified_class": 1,
+   "seconds": 0.1636028999928385
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 15,
+   "label": 5,
+   "output": "model",
+   "bound": 6.711122359411566e-05,
+   "real": 0.0,
+   "fp_allowance": 6.711122359411558e-05,
+   "found": 4.547473508864641e-13,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.908777156184931e-14,
+    "interval-separate": 2.914216367271199e-14
+   },
+   "certified_class": 5,
+   "seconds": 0.1654909999924712
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 15,
+   "label": 5,
+   "output": "logits",
+   "bound": 0.2102153361689034,
+   "real": 0.0,
+   "fp_allowance": 0.21021533616890314,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.3937321749850848e-10,
+    "interval-separate": 1.3963372683438658e-10
+   },
+   "certified_class": 5,
+   "seconds": 0.15762130002258345
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 16,
+   "label": 9,
+   "output": "model",
+   "bound": 1.6944922806270243e-05,
+   "real": 0.0,
+   "fp_allowance": 1.694492280627022e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.241525298760443e-15,
+    "interval-separate": 1.2439086242797276e-15
+   },
+   "certified_class": 9,
+   "seconds": 0.17584360000910237
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 16,
+   "label": 9,
+   "output": "logits",
+   "bound": 0.22003153848496051,
+   "real": 0.0,
+   "fp_allowance": 0.22003153848496024,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.2251706053974157e-10,
+    "interval-separate": 1.2275242011964e-10
+   },
+   "certified_class": 9,
+   "seconds": 0.16298660001484677
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 17,
+   "label": 7,
+   "output": "model",
+   "bound": 1.693211399850512e-05,
+   "real": 0.0,
+   "fp_allowance": 1.6932113998505097e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 3.5231435454924094e-16,
+    "interval-separate": 3.5298691016373134e-16
+   },
+   "certified_class": 7,
+   "seconds": 0.19155300001148134
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 17,
+   "label": 7,
+   "output": "logits",
+   "bound": 0.21945496941188206,
+   "real": 0.0,
+   "fp_allowance": 0.21945496941188178,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.3164889151997743e-10,
+    "interval-separate": 1.3190032310028468e-10
+   },
+   "certified_class": 7,
+   "seconds": 0.1617188999953214
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 18,
+   "label": 3,
+   "output": "model",
+   "bound": 0.0004599988750889763,
+   "real": 0.0,
+   "fp_allowance": 0.00045999887508897577,
+   "found": 5.820766091346741e-11,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.2666084305585198e-13,
+    "interval-separate": 2.27082493396583e-13
+   },
+   "certified_class": 3,
+   "seconds": 0.17117679998045787
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 18,
+   "label": 3,
+   "output": "logits",
+   "bound": 0.2654163342297363,
+   "real": 0.0,
+   "fp_allowance": 0.265416334229736,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.7786344306078966e-10,
+    "interval-separate": 1.7819431180808357e-10
+   },
+   "certified_class": 3,
+   "seconds": 0.1703474000096321
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 19,
+   "label": 4,
+   "output": "model",
+   "bound": 1.3052528474117144e-05,
+   "real": 0.0,
+   "fp_allowance": 1.3052528474117127e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 4.156467449764192e-17,
+    "interval-separate": 4.1641266662055704e-17
+   },
+   "certified_class": 4,
+   "seconds": 0.21899380002287216
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 19,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.1929932504895327,
+   "real": 0.0,
+   "fp_allowance": 0.19299325048953245,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.202357119245016e-10,
+    "interval-separate": 1.2045773002499516e-10
+   },
+   "certified_class": 4,
+   "seconds": 0.17712050001136959
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 20,
+   "label": 9,
+   "output": "model",
+   "bound": 3.811555266709133e-05,
+   "real": 0.0,
+   "fp_allowance": 3.811555266709128e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.1378731248892533e-14,
+    "interval-separate": 1.140048517407864e-14
+   },
+   "certified_class": 9,
+   "seconds": 0.16290520000620745
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 20,
+   "label": 9,
+   "output": "logits",
+   "bound": 0.24815118967149338,
+   "real": 0.0,
+   "fp_allowance": 0.24815118967149308,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.5964962366736338e-10,
+    "interval-separate": 1.5995552969358157e-10
+   },
+   "certified_class": 9,
+   "seconds": 0.1539111000020057
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 21,
+   "label": 6,
+   "output": "model",
+   "bound": 4.174536578789852e-05,
+   "real": 0.0,
+   "fp_allowance": 4.1745365787898466e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.588608934405798e-14,
+    "interval-separate": 1.5915592764877036e-14
+   },
+   "certified_class": 6,
+   "seconds": 0.17275990001508035
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 21,
+   "label": 6,
+   "output": "logits",
+   "bound": 0.2192619277571859,
+   "real": 0.0,
+   "fp_allowance": 0.21926192775718562,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.4963495771187672e-10,
+    "interval-separate": 1.4991305822120864e-10
+   },
+   "certified_class": 6,
+   "seconds": 0.16670129998237826
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 22,
+   "label": 6,
+   "output": "model",
+   "bound": 1.4917752709937948e-05,
+   "real": 0.0,
+   "fp_allowance": 1.4917752709937929e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.2109167576245388e-15,
+    "interval-separate": 1.2131702075177917e-15
+   },
+   "certified_class": 6,
+   "seconds": 0.18852219998370856
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 22,
+   "label": 6,
+   "output": "logits",
+   "bound": 0.22292305348306854,
+   "real": 0.0,
+   "fp_allowance": 0.22292305348306826,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.5263366828746854e-10,
+    "interval-separate": 1.529179171332541e-10
+   },
+   "certified_class": 6,
+   "seconds": 0.1948860999837052
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 23,
+   "label": 5,
+   "output": "model",
+   "bound": 1.374795367546359e-05,
+   "real": 0.0,
+   "fp_allowance": 1.3747953675463574e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.7069880937649257e-17,
+    "interval-separate": 1.7101734916524158e-17
+   },
+   "certified_class": 5,
+   "seconds": 0.18290280000655912
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 23,
+   "label": 5,
+   "output": "logits",
+   "bound": 0.20890620115961456,
+   "real": 0.0,
+   "fp_allowance": 0.2089062011596143,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.5464026440033313e-10,
+    "interval-separate": 1.549285678492541e-10
+   },
+   "certified_class": 5,
+   "seconds": 0.15780630000517704
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 24,
+   "label": 4,
+   "output": "model",
+   "bound": 3.5396050528370656e-05,
+   "real": 0.0,
+   "fp_allowance": 3.539605052837061e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.2908370182302029e-14,
+    "interval-separate": 1.2931927050023033e-14
+   },
+   "certified_class": 4,
+   "seconds": 0.17671520001022145
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 24,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.1766100682544591,
+   "real": 0.0,
+   "fp_allowance": 0.17661006825445888,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.131885039301895e-10,
+    "interval-separate": 1.1339552099638308e-10
+   },
+   "certified_class": 4,
+   "seconds": 0.17865810001967475
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 25,
+   "label": 0,
+   "output": "model",
+   "bound": 2.0267993322532884e-05,
+   "real": 0.0,
+   "fp_allowance": 2.0267993322532857e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 3.2525351961819187e-21,
+    "interval-separate": 3.259053572170255e-21
+   },
+   "certified_class": 0,
+   "seconds": 0.16790539998328313
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 25,
+   "label": 0,
+   "output": "logits",
+   "bound": 0.345324432851271,
+   "real": 0.0,
+   "fp_allowance": 0.34532443285127057,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.1224838973154717e-10,
+    "interval-separate": 2.1267365221327957e-10
+   },
+   "certified_class": 0,
+   "seconds": 0.15974920001463033
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 26,
+   "label": 7,
+   "output": "model",
+   "bound": 5.532607194343373e-05,
+   "real": 0.0,
+   "fp_allowance": 5.5326071943433665e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.8475362590006252e-14,
+    "interval-separate": 1.8508881442835757e-14
+   },
+   "certified_class": 7,
+   "seconds": 0.16260789998341352
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 26,
+   "label": 7,
+   "output": "logits",
+   "bound": 0.18914610131977327,
+   "real": 0.0,
+   "fp_allowance": 0.18914610131977302,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.0101736258421898e-10,
+    "interval-separate": 1.0120087394946587e-10
+   },
+   "certified_class": 7,
+   "seconds": 0.1619557999947574
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 27,
+   "label": 4,
+   "output": "model",
+   "bound": 1.4094066360149552e-05,
+   "real": 0.0,
+   "fp_allowance": 1.4094066360149535e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.0624772049310018e-16,
+    "interval-separate": 1.0644805760998736e-16
+   },
+   "certified_class": 4,
+   "seconds": 0.15903750000870787
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 27,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.21973534224314337,
+   "real": 0.0,
+   "fp_allowance": 0.2197353422431431,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.293928113183195e-10,
+    "interval-separate": 1.29636837717415e-10
+   },
+   "certified_class": 4,
+   "seconds": 0.15180020002298988
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 28,
+   "label": 0,
+   "output": "model",
+   "bound": 1.675824866063736e-05,
+   "real": 0.0,
+   "fp_allowance": 1.675824866063734e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.926977017308188e-17,
+    "interval-separate": 1.9307196566248638e-17
+   },
+   "certified_class": 0,
+   "seconds": 0.1622127000009641
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 28,
+   "label": 0,
+   "output": "logits",
+   "bound": 0.2684419921180889,
+   "real": 0.0,
+   "fp_allowance": 0.26844199211808856,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.466288236582998e-10,
+    "interval-separate": 1.4691370943281337e-10
+   },
+   "certified_class": 0,
+   "seconds": 0.15561119999620132
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 29,
+   "label": 1,
+   "output": "model",
+   "bound": 1.8025149710458583e-05,
+   "real": 0.0,
+   "fp_allowance": 1.802514971045856e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.8249374390062658e-15,
+    "interval-separate": 2.8301085393520305e-15
+   },
+   "certified_class": 1,
+   "seconds": 0.16101529999286868
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 29,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.18936554762094684,
+   "real": 0.0,
+   "fp_allowance": 0.1893655476209466,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.5441425794713013e-10,
+    "interval-separate": 1.5469668358135507e-10
+   },
+   "certified_class": 1,
+   "seconds": 0.16940780001459643
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 30,
+   "label": 3,
+   "output": "model",
+   "bound": 1.579161051350003e-05,
+   "real": 0.0,
+   "fp_allowance": 1.579161051350001e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.3699220165260798e-17,
+    "interval-separate": 2.374405739949809e-17
+   },
+   "certified_class": 3,
+   "seconds": 0.17065879999427125
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 30,
+   "label": 3,
+   "output": "logits",
+   "bound": 0.23473208060768452,
+   "real": 0.0,
+   "fp_allowance": 0.23473208060768425,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.4650310118021901e-10,
+    "interval-separate": 1.4677995431081539e-10
+   },
+   "certified_class": 3,
+   "seconds": 0.1598775000020396
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 31,
+   "label": 1,
+   "output": "model",
+   "bound": 5.347075878424913e-05,
+   "real": 0.0,
+   "fp_allowance": 5.3470758784249064e-05,
+   "found": 9.094947017729282e-13,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.5504066310781686e-14,
+    "interval-separate": 2.555008110805962e-14
+   },
+   "certified_class": 1,
+   "seconds": 0.16264910000609234
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 31,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.17951184924890856,
+   "real": 0.0,
+   "fp_allowance": 0.17951184924890834,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.3889817197841365e-10,
+    "interval-separate": 1.3914897016610399e-10
+   },
+   "certified_class": 1,
+   "seconds": 0.1534152000094764
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 32,
+   "label": 3,
+   "output": "model",
+   "bound": 1.476647324347076e-05,
+   "real": 0.0,
+   "fp_allowance": 1.4766473243470742e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.3142008572316382e-17,
+    "interval-separate": 2.318600217098746e-17
+   },
+   "certified_class": 3,
+   "seconds": 0.17562660001567565
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 32,
+   "label": 3,
+   "output": "logits",
+   "bound": 0.23627551005591396,
+   "real": 0.0,
+   "fp_allowance": 0.23627551005591368,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.445933214037293e-10,
+    "interval-separate": 1.4486759482955318e-10
+   },
+   "certified_class": 3,
+   "seconds": 0.17908529998385347
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 33,
+   "label": 4,
+   "output": "model",
+   "bound": 0.1121950687071567,
+   "real": 0.0,
+   "fp_allowance": 0.11219506870715656,
+   "found": 1.4901161193847656e-08,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 7.028259383197867e-11,
+    "interval-separate": 7.041949645099238e-11
+   },
+   "certified_class": 0,
+   "seconds": 0.2176548000134062
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 33,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.22661333601041264,
+   "real": 0.0,
+   "fp_allowance": 0.22661333601041236,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.504738729787418e-10,
+    "interval-separate": 1.5076694177349646e-10
+   },
+   "certified_class": 0,
+   "seconds": 0.17618949999450706
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 34,
+   "label": 7,
+   "output": "model",
+   "bound": 1.7861291627876e-05,
+   "real": 0.0,
+   "fp_allowance": 1.7861291627875976e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 7.186040865989434e-16,
+    "interval-separate": 7.199875493714663e-16
+   },
+   "certified_class": 7,
+   "seconds": 0.20304309998755343
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 34,
+   "label": 7,
+   "output": "logits",
+   "bound": 0.23693480481203424,
+   "real": 0.0,
+   "fp_allowance": 0.23693480481203397,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.5025830934036642e-10,
+    "interval-separate": 1.505477188308393e-10
+   },
+   "certified_class": 7,
+   "seconds": 0.1452665000106208
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 35,
+   "label": 2,
+   "output": "model",
+   "bound": 4.2724622791163204e-05,
+   "real": 0.0,
+   "fp_allowance": 4.272462279116315e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.3042320225953433e-14,
+    "interval-separate": 1.3067309965231657e-14
+   },
+   "certified_class": 2,
+   "seconds": 0.17722939999657683
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 35,
+   "label": 2,
+   "output": "logits",
+   "bound": 0.23891090471507365,
+   "real": 0.0,
+   "fp_allowance": 0.23891090471507334,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.4781691250662686e-10,
+    "interval-separate": 1.4809971741402038e-10
+   },
+   "certified_class": 2,
+   "seconds": 0.1495252999884542
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 36,
+   "label": 7,
+   "output": "model",
+   "bound": 8.804740917175876e-05,
+   "real": 0.0,
+   "fp_allowance": 8.804740917175866e-05,
+   "found": 7.275957614183426e-12,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 3.955839697946766e-14,
+    "interval-separate": 3.9633214236820006e-14
+   },
+   "certified_class": 7,
+   "seconds": 0.15906689999974333
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 36,
+   "label": 7,
+   "output": "logits",
+   "bound": 0.2149215792469143,
+   "real": 0.0,
+   "fp_allowance": 0.21492157924691402,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.4152309867129497e-10,
+    "interval-separate": 1.417906784765291e-10
+   },
+   "certified_class": 7,
+   "seconds": 0.16219409997574985
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 37,
+   "label": 1,
+   "output": "model",
+   "bound": 1.7054237603603184e-05,
+   "real": 0.0,
+   "fp_allowance": 1.705423760360316e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.3455901539868624e-15,
+    "interval-separate": 1.3480899308265355e-15
+   },
+   "certified_class": 1,
+   "seconds": 0.158918300003279
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 37,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.19423964356984058,
+   "real": 0.0,
+   "fp_allowance": 0.19423964356984033,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.4892765136285228e-10,
+    "interval-separate": 1.4920422248581947e-10
+   },
+   "certified_class": 1,
+   "seconds": 0.15175679998355918
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 38,
+   "label": 2,
+   "output": "model",
+   "bound": 0.01833532538741009,
+   "real": 0.0,
+   "fp_allowance": 0.018335325387410065,
+   "found": 7.105427357601002e-15,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.2423386796882341e-11,
+    "interval-separate": 1.2446186072151183e-11
+   },
+   "certified_class": 2,
+   "seconds": 0.16285890000290237
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 38,
+   "label": 2,
+   "output": "logits",
+   "bound": 0.20159739474923363,
+   "real": 0.0,
+   "fp_allowance": 0.20159739474923338,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.6327078920054315e-10,
+    "interval-separate": 1.635703633668245e-10
+   },
+   "certified_class": 2,
+   "seconds": 0.15561220000381581
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 39,
+   "label": 1,
+   "output": "model",
+   "bound": 1.7812566136004828e-05,
+   "real": 0.0,
+   "fp_allowance": 1.7812566136004804e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.7537570967496606e-15,
+    "interval-separate": 1.7570402883909125e-15
+   },
+   "certified_class": 1,
+   "seconds": 0.17701349998242222
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 39,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.21555653466064187,
+   "real": 0.0,
+   "fp_allowance": 0.2155565346606416,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.8983249504742847e-10,
+    "interval-separate": 1.9018791772267963e-10
+   },
+   "certified_class": 1,
+   "seconds": 0.15059730000211857
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 40,
+   "label": 1,
+   "output": "model",
+   "bound": 4.312173896887197e-05,
+   "real": 0.0,
+   "fp_allowance": 4.3121738968871916e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.2491502803507457e-14,
+    "interval-separate": 2.253084837195667e-14
+   },
+   "certified_class": 1,
+   "seconds": 0.15954799999599345
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 40,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.16144956239978506,
+   "real": 0.0,
+   "fp_allowance": 0.16144956239978486,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.420907013549453e-10,
+    "interval-separate": 1.423392612197182e-10
+   },
+   "certified_class": 1,
+   "seconds": 0.15012690000003204
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 41,
+   "label": 7,
+   "output": "model",
+   "bound": 2.1608222828210748e-05,
+   "real": 0.0,
+   "fp_allowance": 2.160822282821072e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 4.992791326271254e-15,
+    "interval-separate": 5.001866832672252e-15
+   },
+   "certified_class": 7,
+   "seconds": 0.16275700001278892
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 41,
+   "label": 7,
+   "output": "logits",
+   "bound": 0.19606583381051998,
+   "real": 0.0,
+   "fp_allowance": 0.19606583381051973,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.437687555482392e-10,
+    "interval-separate": 1.4402998799836987e-10
+   },
+   "certified_class": 7,
+   "seconds": 0.16091700000106357
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 42,
+   "label": 4,
+   "output": "model",
+   "bound": 8.870723781363728e-05,
+   "real": 0.0,
+   "fp_allowance": 8.870723781363717e-05,
+   "found": 8.470329472543003e-22,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 4.325969283680395e-14,
+    "interval-separate": 4.3340362163964234e-14
+   },
+   "certified_class": 4,
+   "seconds": 0.19058359999326058
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 42,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.23018844370036967,
+   "real": 0.0,
+   "fp_allowance": 0.2301884437003694,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.7163915224524837e-10,
+    "interval-separate": 1.719594445141312e-10
+   },
+   "certified_class": 4,
+   "seconds": 0.16010429998277687
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 43,
+   "label": 2,
+   "output": "model",
+   "bound": 1.4642886422430249e-05,
+   "real": 0.0,
+   "fp_allowance": 1.464288642243023e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 9.060456156281721e-16,
+    "interval-separate": 9.076973486049902e-16
+   },
+   "certified_class": 2,
+   "seconds": 0.1824133000045549
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 43,
+   "label": 2,
+   "output": "logits",
+   "bound": 0.19418650557489375,
+   "real": 0.0,
+   "fp_allowance": 0.1941865055748935,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.5070056439007563e-10,
+    "interval-separate": 1.5097543801750009e-10
+   },
+   "certified_class": 2,
+   "seconds": 0.17371529998490587
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 44,
+   "label": 3,
+   "output": "model",
+   "bound": 0.00010938299771310437,
+   "real": 0.0,
+   "fp_allowance": 0.00010938299771310424,
+   "found": 7.105427357601002e-15,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 6.153294701582288e-14,
+    "interval-separate": 6.164613136971279e-14
+   },
+   "certified_class": 3,
+   "seconds": 0.17742719998932444
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 44,
+   "label": 3,
+   "output": "logits",
+   "bound": 0.20793216024772238,
+   "real": 0.0,
+   "fp_allowance": 0.20793216024772213,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.6765176218584404e-10,
+    "interval-separate": 1.6796018835012362e-10
+   },
+   "certified_class": 3,
+   "seconds": 0.16590309998719022
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 45,
+   "label": 5,
+   "output": "model",
+   "bound": 4.855767893465007e-05,
+   "real": 0.0,
+   "fp_allowance": 4.855767893465001e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.0152394035808276e-14,
+    "interval-separate": 2.0189674273442233e-14
+   },
+   "certified_class": 5,
+   "seconds": 0.16670229998999275
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 45,
+   "label": 5,
+   "output": "logits",
+   "bound": 0.20377832638679683,
+   "real": 0.0,
+   "fp_allowance": 0.20377832638679658,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.3883509456509291e-10,
+    "interval-separate": 1.390913089949227e-10
+   },
+   "certified_class": 5,
+   "seconds": 0.16661169999861158
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 46,
+   "label": 1,
+   "output": "model",
+   "bound": 0.0003729288170061451,
+   "real": 0.0,
+   "fp_allowance": 0.0003729288170061446,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.9309423385305202e-13,
+    "interval-separate": 1.934575895900247e-13
+   },
+   "certified_class": 1,
+   "seconds": 0.17219440001645125
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 46,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.2136659241722873,
+   "real": 0.0,
+   "fp_allowance": 0.21366592417228703,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.4507389864446826e-10,
+    "interval-separate": 1.453468647784052e-10
+   },
+   "certified_class": 1,
+   "seconds": 0.1570789999968838
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 47,
+   "label": 2,
+   "output": "model",
+   "bound": 1.570218720264434e-05,
+   "real": 0.0,
+   "fp_allowance": 1.570218720264432e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.01999871665318e-15,
+    "interval-separate": 1.0218679359945822e-15
+   },
+   "certified_class": 2,
+   "seconds": 0.17648510000435635
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 47,
+   "label": 2,
+   "output": "logits",
+   "bound": 0.1884405412369236,
+   "real": 0.0,
+   "fp_allowance": 0.18844054123692336,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.5149931199662992e-10,
+    "interval-separate": 1.517773841980468e-10
+   },
+   "certified_class": 2,
+   "seconds": 0.15601549998973496
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 48,
+   "label": 4,
+   "output": "model",
+   "bound": 1.6898121644138593e-05,
+   "real": 0.0,
+   "fp_allowance": 1.689812164413857e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.789247653965316e-16,
+    "interval-separate": 2.794634328596059e-16
+   },
+   "certified_class": 4,
+   "seconds": 0.17908939998596907
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 48,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.2918237631104617,
+   "real": 0.0,
+   "fp_allowance": 0.2918237631104613,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.7636957734909794e-10,
+    "interval-separate": 1.7671084667263845e-10
+   },
+   "certified_class": 4,
+   "seconds": 0.15706349999527447
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 49,
+   "label": 4,
+   "output": "model",
+   "bound": 1.8065587769596582e-05,
+   "real": 0.0,
+   "fp_allowance": 1.8065587769596558e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.4833551948783164e-15,
+    "interval-separate": 1.4861750383150025e-15
+   },
+   "certified_class": 4,
+   "seconds": 0.1675550999934785
+  },
+  {
+   "eps_pixels": 0.0,
+   "image": 49,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.224152180408894,
+   "real": 0.0,
+   "fp_allowance": 0.22415218040889373,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.1143946253332459e-10,
+    "interval-separate": 1.116513878662296e-10
+   },
+   "certified_class": 4,
+   "seconds": 0.1528968999919016
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 0,
+   "label": 7,
+   "output": "model",
+   "bound": 1.7938209715574737e-05,
+   "real": 0.0,
+   "fp_allowance": 1.7938209715574713e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 5.542517550088165e-06,
+    "interval-separate": 20.461266060440042
+   },
+   "certified_class": 7,
+   "seconds": 0.18753630001447164
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 0,
+   "label": 7,
+   "output": "logits",
+   "bound": 0.20431951556377712,
+   "real": 0.0,
+   "fp_allowance": 0.20431951556377687,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.004195290741283,
+    "interval-separate": 41.95414540889203
+   },
+   "certified_class": 7,
+   "seconds": 0.18888849997892976
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 1,
+   "label": 2,
+   "output": "model",
+   "bound": 2.189098542523081e-05,
+   "real": 0.0,
+   "fp_allowance": 2.1890985425230784e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 3.3675607722169562e-06,
+    "interval-separate": 24.272257012310295
+   },
+   "certified_class": 2,
+   "seconds": 0.18493700001272373
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 1,
+   "label": 2,
+   "output": "logits",
+   "bound": 0.2513426763568239,
+   "real": 0.0,
+   "fp_allowance": 0.25134267635682356,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.6722581561557334,
+    "interval-separate": 49.081446345662904
+   },
+   "certified_class": 2,
+   "seconds": 0.17383139999583364
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 2,
+   "label": 1,
+   "output": "model",
+   "bound": 0.00045708057867273414,
+   "real": 0.0,
+   "fp_allowance": 0.0004570805786727336,
+   "found": 7.275957614183426e-12,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.002030049375594339,
+    "interval-separate": 22.75306932697119
+   },
+   "certified_class": 1,
+   "seconds": 0.18780670000705868
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 2,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.1757271258523114,
+   "real": 0.0,
+   "fp_allowance": 0.17572712585231118,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.1140278069035199,
+    "interval-separate": 48.1518258282694
+   },
+   "certified_class": 1,
+   "seconds": 0.18599700002232566
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 3,
+   "label": 0,
+   "output": "model",
+   "bound": 1.4838129641749322e-05,
+   "real": 0.0,
+   "fp_allowance": 1.4838129641749304e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.1674202869279414e-07,
+    "interval-separate": 23.052016640698124
+   },
+   "certified_class": 0,
+   "seconds": 0.2325391999911517
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 3,
+   "label": 0,
+   "output": "logits",
+   "bound": 0.28642240039204064,
+   "real": 0.0,
+   "fp_allowance": 0.28642240039204026,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.8713553021974958,
+    "interval-separate": 46.815610025450745
+   },
+   "certified_class": 0,
+   "seconds": 0.17507310002110898
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 4,
+   "label": 4,
+   "output": "model",
+   "bound": 0.00014737965603395483,
+   "real": 0.0,
+   "fp_allowance": 0.00014737965603395464,
+   "found": 3.637978807091713e-12,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0003504716307537272,
+    "interval-separate": 16.765821968484666
+   },
+   "certified_class": 4,
+   "seconds": 0.21939579999889247
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 4,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.20778665855741596,
+   "real": 0.0,
+   "fp_allowance": 0.2077866585574157,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.833203232993302,
+    "interval-separate": 34.65840796001379
+   },
+   "certified_class": 4,
+   "seconds": 0.19707630001357757
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 5,
+   "label": 1,
+   "output": "model",
+   "bound": 5.662769623833898e-05,
+   "real": 0.0,
+   "fp_allowance": 5.662769623833891e-05,
+   "found": 9.094947017729282e-13,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.00014856828800671084,
+    "interval-separate": 21.955456483175265
+   },
+   "certified_class": 1,
+   "seconds": 0.2010803000011947
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 5,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.19590330200216213,
+   "real": 0.0,
+   "fp_allowance": 0.19590330200216188,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.93989047421395,
+    "interval-separate": 46.92593224937841
+   },
+   "certified_class": 1,
+   "seconds": 0.16902170001412742
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 6,
+   "label": 4,
+   "output": "model",
+   "bound": 0.00039160551119758215,
+   "real": 0.0,
+   "fp_allowance": 0.00039160551119758166,
+   "found": 1.4551915228366852e-11,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0007201231790879945,
+    "interval-separate": 19.727641845086616
+   },
+   "certified_class": 4,
+   "seconds": 0.17465100000845268
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 6,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.21399746370523925,
+   "real": 0.0,
+   "fp_allowance": 0.21399746370523898,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.6492972645606824,
+    "interval-separate": 40.38119318962366
+   },
+   "certified_class": 4,
+   "seconds": 0.1604730999970343
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 7,
+   "label": 9,
+   "output": "model",
+   "bound": 4.039102191511596e-05,
+   "real": 0.0,
+   "fp_allowance": 4.039102191511591e-05,
+   "found": 2.2737367544323206e-13,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 7.565654400590147e-05,
+    "interval-separate": 20.059865959315818
+   },
+   "certified_class": 9,
+   "seconds": 0.19376379999448545
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 7,
+   "label": 9,
+   "output": "logits",
+   "bound": 0.22036288186246164,
+   "real": 0.0,
+   "fp_allowance": 0.22036288186246136,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.8744675471860461,
+    "interval-separate": 41.15485891046687
+   },
+   "certified_class": 9,
+   "seconds": 0.17002289998345077
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 8,
+   "label": 5,
+   "output": "model",
+   "bound": 0.029747648862574277,
+   "real": 0.0,
+   "fp_allowance": 0.02974764886257424,
+   "found": 4.656612873077393e-10,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.05764877294770727,
+    "interval-separate": 23.35223520962325
+   },
+   "certified_class": 6,
+   "seconds": 0.17226590000791475
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 8,
+   "label": 5,
+   "output": "logits",
+   "bound": 0.25634646408382894,
+   "real": 0.0,
+   "fp_allowance": 0.2563464640838286,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.7000218121323872,
+    "interval-separate": 48.479648886902126
+   },
+   "certified_class": 6,
+   "seconds": 0.1750437000009697
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 9,
+   "label": 9,
+   "output": "model",
+   "bound": 0.0027276822734872063,
+   "real": 0.0,
+   "fp_allowance": 0.002727682273487203,
+   "found": 5.820766091346741e-11,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.004498146917890262,
+    "interval-separate": 22.174593663262037
+   },
+   "certified_class": 9,
+   "seconds": 0.19865540001774207
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 9,
+   "label": 9,
+   "output": "logits",
+   "bound": 0.26286005728514045,
+   "real": 0.0,
+   "fp_allowance": 0.2628600572851401,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.6723212475784516,
+    "interval-separate": 45.199512337320805
+   },
+   "certified_class": 9,
+   "seconds": 0.18102730001555756
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 10,
+   "label": 0,
+   "output": "model",
+   "bound": 1.6149740366337814e-05,
+   "real": 0.0,
+   "fp_allowance": 1.6149740366337794e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 2.0520465627141467e-06,
+    "interval-separate": 19.495967286988865
+   },
+   "certified_class": 0,
+   "seconds": 0.1947296999860555
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 10,
+   "label": 0,
+   "output": "logits",
+   "bound": 0.24615546401612207,
+   "real": 0.0,
+   "fp_allowance": 0.24615546401612176,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.5706597301528518,
+    "interval-separate": 39.67696847536434
+   },
+   "certified_class": 0,
+   "seconds": 0.32188410000526346
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 11,
+   "label": 6,
+   "output": "model",
+   "bound": 0.0006615382219305326,
+   "real": 0.0,
+   "fp_allowance": 0.0006615382219305317,
+   "found": 7.275957614183426e-12,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.002330221136198548,
+    "interval-separate": 22.477651378968865
+   },
+   "certified_class": 6,
+   "seconds": 0.2007846999913454
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 11,
+   "label": 6,
+   "output": "logits",
+   "bound": 0.23859610232867762,
+   "real": 0.0,
+   "fp_allowance": 0.2385961023286773,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.234060351117291,
+    "interval-separate": 46.21246129792717
+   },
+   "certified_class": 6,
+   "seconds": 0.17372180000529625
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 12,
+   "label": 9,
+   "output": "model",
+   "bound": 0.0006289659657791332,
+   "real": 0.0,
+   "fp_allowance": 0.0006289659657791324,
+   "found": 1.4551915228366852e-11,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0019319429289653125,
+    "interval-separate": 24.261373865491127
+   },
+   "certified_class": 9,
+   "seconds": 0.18062540001119487
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 12,
+   "label": 9,
+   "output": "logits",
+   "bound": 0.22564238255338603,
+   "real": 0.0,
+   "fp_allowance": 0.22564238255338576,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.102434059029213,
+    "interval-separate": 48.825539138000615
+   },
+   "certified_class": 9,
+   "seconds": 0.16812780001782812
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 13,
+   "label": 0,
+   "output": "model",
+   "bound": 1.5423659602594123e-05,
+   "real": 0.0,
+   "fp_allowance": 1.5423659602594103e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 6.922680236869979e-07,
+    "interval-separate": 19.23137245443816
+   },
+   "certified_class": 0,
+   "seconds": 0.17307170000276528
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 13,
+   "label": 0,
+   "output": "logits",
+   "bound": 0.25008597723771714,
+   "real": 0.0,
+   "fp_allowance": 0.2500859772377168,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.6642703864975582,
+    "interval-separate": 38.941015360817964
+   },
+   "certified_class": 0,
+   "seconds": 0.1809425999817904
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 14,
+   "label": 1,
+   "output": "model",
+   "bound": 1.739267390557048e-05,
+   "real": 0.0,
+   "fp_allowance": 1.7392673905570456e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.4474981596150665e-06,
+    "interval-separate": 20.76420383141452
+   },
+   "certified_class": 1,
+   "seconds": 0.1881195000023581
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 14,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.21065550342466624,
+   "real": 0.0,
+   "fp_allowance": 0.210655503424666,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.6351959243518704,
+    "interval-separate": 44.15871742435802
+   },
+   "certified_class": 1,
+   "seconds": 0.1767900999984704
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 15,
+   "label": 5,
+   "output": "model",
+   "bound": 0.0006970475441739893,
+   "real": 0.0,
+   "fp_allowance": 0.0006970475441739884,
+   "found": 1.4551915228366852e-11,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0020304431279801875,
+    "interval-separate": 20.94424452777017
+   },
+   "certified_class": 5,
+   "seconds": 0.18682000000262633
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 15,
+   "label": 5,
+   "output": "logits",
+   "bound": 0.21321765858867042,
+   "real": 0.0,
+   "fp_allowance": 0.21321765858867014,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.9561045546391769,
+    "interval-separate": 42.90802462665156
+   },
+   "certified_class": 5,
+   "seconds": 0.17424610001035035
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 16,
+   "label": 9,
+   "output": "model",
+   "bound": 3.114679705747708e-05,
+   "real": 0.0,
+   "fp_allowance": 3.1146797057477037e-05,
+   "found": 5.551115123125783e-17,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 3.456248763774797e-05,
+    "interval-separate": 19.283480985896166
+   },
+   "certified_class": 9,
+   "seconds": 0.18224840000038967
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 16,
+   "label": 9,
+   "output": "logits",
+   "bound": 0.22316988465987017,
+   "real": 0.0,
+   "fp_allowance": 0.2231698846598699,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.7024392362896235,
+    "interval-separate": 38.591716890854926
+   },
+   "certified_class": 9,
+   "seconds": 0.1766795000003185
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 17,
+   "label": 7,
+   "output": "model",
+   "bound": 2.367270054347342e-05,
+   "real": 0.0,
+   "fp_allowance": 2.367270054347339e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.34551516117052e-05,
+    "interval-separate": 19.222633162169267
+   },
+   "certified_class": 7,
+   "seconds": 0.17799070000182837
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 17,
+   "label": 7,
+   "output": "logits",
+   "bound": 0.2220248748390454,
+   "real": 0.0,
+   "fp_allowance": 0.22202487483904512,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.6112848251335823,
+    "interval-separate": 39.465763689627096
+   },
+   "certified_class": 7,
+   "seconds": 0.17140890000155196
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 18,
+   "label": 3,
+   "output": "model",
+   "bound": 0.00486172253311019,
+   "real": 0.0,
+   "fp_allowance": 0.004861722533110184,
+   "found": 5.820766091346741e-11,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.010560033910282757,
+    "interval-separate": 21.726377275281653
+   },
+   "certified_class": 3,
+   "seconds": 0.18819740001345053
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 18,
+   "label": 3,
+   "output": "logits",
+   "bound": 0.26943067691128236,
+   "real": 0.0,
+   "fp_allowance": 0.26943067691128203,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.9532023913455635,
+    "interval-separate": 46.15573269860913
+   },
+   "certified_class": 3,
+   "seconds": 0.16885940000065602
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 19,
+   "label": 4,
+   "output": "model",
+   "bound": 1.3934891640923585e-05,
+   "real": 0.0,
+   "fp_allowance": 1.3934891640923568e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.7082926040414943e-06,
+    "interval-separate": 20.808765422887028
+   },
+   "certified_class": 4,
+   "seconds": 0.18215209999470972
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 19,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.1955036917082632,
+   "real": 0.0,
+   "fp_allowance": 0.19550369170826296,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.7368044362639384,
+    "interval-separate": 43.22742993822624
+   },
+   "certified_class": 4,
+   "seconds": 0.17277800000738353
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 20,
+   "label": 9,
+   "output": "model",
+   "bound": 0.00018637228093312875,
+   "real": 0.0,
+   "fp_allowance": 0.0001863722809331285,
+   "found": 3.637978807091713e-12,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0004229899546002579,
+    "interval-separate": 21.049712601962234
+   },
+   "certified_class": 9,
+   "seconds": 0.19099350000033155
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 20,
+   "label": 9,
+   "output": "logits",
+   "bound": 0.2512175842767406,
+   "real": 0.0,
+   "fp_allowance": 0.2512175842767403,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.9591670708916663,
+    "interval-separate": 42.56563066614774
+   },
+   "certified_class": 9,
+   "seconds": 0.17130890002590604
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 21,
+   "label": 6,
+   "output": "model",
+   "bound": 0.0003178912279462136,
+   "real": 0.0,
+   "fp_allowance": 0.00031789122794621317,
+   "found": 7.275957614183426e-12,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.00074063257901005,
+    "interval-separate": 21.91817976217186
+   },
+   "certified_class": 6,
+   "seconds": 0.17628790001617745
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 21,
+   "label": 6,
+   "output": "logits",
+   "bound": 0.22224228307460536,
+   "real": 0.0,
+   "fp_allowance": 0.22224228307460508,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.7854767972580438,
+    "interval-separate": 44.74647797297686
+   },
+   "certified_class": 6,
+   "seconds": 0.16742820001672953
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 22,
+   "label": 6,
+   "output": "model",
+   "bound": 2.983031247723946e-05,
+   "real": 0.0,
+   "fp_allowance": 2.9830312477239424e-05,
+   "found": 2.220446049250313e-16,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 4.5843348228164127e-05,
+    "interval-separate": 20.885241958889388
+   },
+   "certified_class": 6,
+   "seconds": 0.17956129999947734
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 22,
+   "label": 6,
+   "output": "logits",
+   "bound": 0.2253603237025902,
+   "real": 0.0,
+   "fp_allowance": 0.22536032370258993,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.8944632992742148,
+    "interval-separate": 43.70521728370155
+   },
+   "certified_class": 6,
+   "seconds": 0.17601759999524802
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 23,
+   "label": 5,
+   "output": "model",
+   "bound": 1.4672882472147702e-05,
+   "real": 0.0,
+   "fp_allowance": 1.4672882472147683e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.8114549665888408e-06,
+    "interval-separate": 23.163378923776822
+   },
+   "certified_class": 5,
+   "seconds": 0.17346690001431853
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 23,
+   "label": 5,
+   "output": "logits",
+   "bound": 0.21192074325130053,
+   "real": 0.0,
+   "fp_allowance": 0.21192074325130028,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.4406196947878145,
+    "interval-separate": 47.58747649399985
+   },
+   "certified_class": 5,
+   "seconds": 0.18851419998100027
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 24,
+   "label": 4,
+   "output": "model",
+   "bound": 0.00034709761703554114,
+   "real": 0.0,
+   "fp_allowance": 0.0003470976170355407,
+   "found": 3.637978807091713e-12,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0015232093047757307,
+    "interval-separate": 19.916823054162293
+   },
+   "certified_class": 4,
+   "seconds": 0.17952380000497214
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 24,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.1792741289072855,
+   "real": 0.0,
+   "fp_allowance": 0.17927412890728528,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.1718786791372457,
+    "interval-separate": 41.44440380410561
+   },
+   "certified_class": 4,
+   "seconds": 0.16895610000938177
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 25,
+   "label": 0,
+   "output": "model",
+   "bound": 2.0627988550767646e-05,
+   "real": 0.0,
+   "fp_allowance": 2.062798855076762e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 8.192611087861902e-11,
+    "interval-separate": 21.273601588350697
+   },
+   "certified_class": 0,
+   "seconds": 0.18053519999375567
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 25,
+   "label": 0,
+   "output": "logits",
+   "bound": 0.3499007979928833,
+   "real": 0.0,
+   "fp_allowance": 0.3499007979928829,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.7608074204042731,
+    "interval-separate": 44.18243001802212
+   },
+   "certified_class": 0,
+   "seconds": 0.17488929998944513
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 26,
+   "label": 7,
+   "output": "model",
+   "bound": 0.00028763782118525433,
+   "real": 0.0,
+   "fp_allowance": 0.00028763782118525395,
+   "found": 1.4551915228366852e-11,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0007180393359145762,
+    "interval-separate": 17.006745639804063
+   },
+   "certified_class": 7,
+   "seconds": 0.17816299997502938
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 26,
+   "label": 7,
+   "output": "logits",
+   "bound": 0.1913921232873394,
+   "real": 0.0,
+   "fp_allowance": 0.19139212328733915,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.7447627151403439,
+    "interval-separate": 34.49226462443202
+   },
+   "certified_class": 7,
+   "seconds": 0.17160319999675266
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 27,
+   "label": 4,
+   "output": "model",
+   "bound": 1.6347284483163214e-05,
+   "real": 0.0,
+   "fp_allowance": 1.6347284483163193e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 6.2591973089856636e-06,
+    "interval-separate": 19.55416224696063
+   },
+   "certified_class": 4,
+   "seconds": 0.16754629998467863
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 27,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.2224724677552111,
+   "real": 0.0,
+   "fp_allowance": 0.22247246775521082,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.035417358050863,
+    "interval-separate": 39.86995090586952
+   },
+   "certified_class": 4,
+   "seconds": 0.1764856000081636
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 28,
+   "label": 0,
+   "output": "model",
+   "bound": 1.7422030426434528e-05,
+   "real": 0.0,
+   "fp_allowance": 1.7422030426434504e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 5.035516191340075e-07,
+    "interval-separate": 19.681786030305567
+   },
+   "certified_class": 0,
+   "seconds": 0.1815094999910798
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 28,
+   "label": 0,
+   "output": "logits",
+   "bound": 0.2720781882115432,
+   "real": 0.0,
+   "fp_allowance": 0.2720781882115429,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.7146074528297355,
+    "interval-separate": 40.10603077588964
+   },
+   "certified_class": 0,
+   "seconds": 0.1750049999973271
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 29,
+   "label": 1,
+   "output": "model",
+   "bound": 5.3197284570544096e-05,
+   "real": 0.0,
+   "fp_allowance": 5.319728457054403e-05,
+   "found": 9.094947017729282e-13,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.00017545091631905282,
+    "interval-separate": 22.514456268335536
+   },
+   "certified_class": 1,
+   "seconds": 0.17214040001272224
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 29,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.19159188616939152,
+   "real": 0.0,
+   "fp_allowance": 0.19159188616939127,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.2566290205945874,
+    "interval-separate": 47.36346796713854
+   },
+   "certified_class": 1,
+   "seconds": 0.17854629998328164
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 30,
+   "label": 3,
+   "output": "model",
+   "bound": 1.6520323745481305e-05,
+   "real": 0.0,
+   "fp_allowance": 1.6520323745481284e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 7.206637037619036e-07,
+    "interval-separate": 20.51000011177584
+   },
+   "certified_class": 3,
+   "seconds": 0.17700009999680333
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 30,
+   "label": 3,
+   "output": "logits",
+   "bound": 0.23764912597028837,
+   "real": 0.0,
+   "fp_allowance": 0.23764912597028806,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.8396322002347634,
+    "interval-separate": 42.665361796153576
+   },
+   "certified_class": 3,
+   "seconds": 0.17814619999262504
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 31,
+   "label": 1,
+   "output": "model",
+   "bound": 0.0003861017751104803,
+   "real": 0.0,
+   "fp_allowance": 0.00038610177511047984,
+   "found": 3.637978807091713e-12,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0014634753802794187,
+    "interval-separate": 21.61400807028409
+   },
+   "certified_class": 1,
+   "seconds": 0.1935642999887932
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 31,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.181510231509739,
+   "real": 0.0,
+   "fp_allowance": 0.18151023150973877,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.0584206112943844,
+    "interval-separate": 45.56449577205171
+   },
+   "certified_class": 1,
+   "seconds": 0.1737301999819465
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 32,
+   "label": 3,
+   "output": "model",
+   "bound": 1.5597023839336683e-05,
+   "real": 0.0,
+   "fp_allowance": 1.5597023839336663e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 7.845973827440724e-07,
+    "interval-separate": 19.57499131778517
+   },
+   "certified_class": 3,
+   "seconds": 0.18311650000396185
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 32,
+   "label": 3,
+   "output": "logits",
+   "bound": 0.23938405716530625,
+   "real": 0.0,
+   "fp_allowance": 0.23938405716530595,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.8074306164181007,
+    "interval-separate": 41.0475310298793
+   },
+   "certified_class": 3,
+   "seconds": 0.177831300010439
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 33,
+   "label": 4,
+   "output": "model",
+   "bound": 0.11479269403061211,
+   "real": 0.0,
+   "fp_allowance": 0.11479269403061197,
+   "found": 2.9802322387695312e-08,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.1971921999809051,
+    "interval-separate": 21.13231399707543
+   },
+   "certified_class": null,
+   "seconds": 0.17499430000316352
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 33,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.22956444337518647,
+   "real": 0.0,
+   "fp_allowance": 0.2295644433751862,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.4926095875020233,
+    "interval-separate": 43.70335687308075
+   },
+   "certified_class": null,
+   "seconds": 0.16639069997472689
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 34,
+   "label": 7,
+   "output": "model",
+   "bound": 3.9700773110484644e-05,
+   "real": 0.0,
+   "fp_allowance": 3.970077311048459e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 4.6866491399335084e-05,
+    "interval-separate": 21.52479654556752
+   },
+   "certified_class": 7,
+   "seconds": 0.19312969999737106
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 34,
+   "label": 7,
+   "output": "logits",
+   "bound": 0.2402899082218027,
+   "real": 0.0,
+   "fp_allowance": 0.2402899082218024,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.7406361471589243,
+    "interval-separate": 44.75551847569265
+   },
+   "certified_class": 7,
+   "seconds": 0.17113530001370236
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 35,
+   "label": 2,
+   "output": "model",
+   "bound": 0.00018596969261835543,
+   "real": 0.0,
+   "fp_allowance": 0.0001859696926183552,
+   "found": 3.637978807091713e-12,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0002624454572818912,
+    "interval-separate": 21.703865474388806
+   },
+   "certified_class": 2,
+   "seconds": 0.1827421000052709
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 35,
+   "label": 2,
+   "output": "logits",
+   "bound": 0.24237572985831643,
+   "real": 0.0,
+   "fp_allowance": 0.24237572985831612,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.5789605177645203,
+    "interval-separate": 43.494518361563365
+   },
+   "certified_class": 2,
+   "seconds": 0.1614889999909792
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 36,
+   "label": 7,
+   "output": "model",
+   "bound": 0.0009555908236079157,
+   "real": 0.0,
+   "fp_allowance": 0.0009555908236079145,
+   "found": 1.4551915228366852e-11,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.002235944902234182,
+    "interval-separate": 20.481301133890494
+   },
+   "certified_class": 7,
+   "seconds": 0.18106440000701696
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 36,
+   "label": 7,
+   "output": "logits",
+   "bound": 0.21771173181096415,
+   "real": 0.0,
+   "fp_allowance": 0.21771173181096387,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.8342589854971746,
+    "interval-separate": 41.97950017797627
+   },
+   "certified_class": 7,
+   "seconds": 0.17004659998929128
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 37,
+   "label": 1,
+   "output": "model",
+   "bound": 3.248342353417835e-05,
+   "real": 0.0,
+   "fp_allowance": 3.248342353417831e-05,
+   "found": 3.552713678800501e-15,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 5.5695560880367434e-05,
+    "interval-separate": 21.942912202002443
+   },
+   "certified_class": 1,
+   "seconds": 0.19711710000410676
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 37,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.19657391655546516,
+   "real": 0.0,
+   "fp_allowance": 0.1965739165554649,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.9462703834013529,
+    "interval-separate": 46.406863584138684
+   },
+   "certified_class": 1,
+   "seconds": 0.1821761999744922
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 38,
+   "label": 2,
+   "output": "model",
+   "bound": 0.09555393837982813,
+   "real": 0.0,
+   "fp_allowance": 0.09555393837982801,
+   "found": 3.725290298461914e-09,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.3506920095061033,
+    "interval-separate": 25.203826299841587
+   },
+   "certified_class": 2,
+   "seconds": 0.1849270999955479
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 38,
+   "label": 2,
+   "output": "logits",
+   "bound": 0.2046080347350889,
+   "real": 0.0,
+   "fp_allowance": 0.20460803473508865,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.9216527922689941,
+    "interval-separate": 50.969314116240774
+   },
+   "certified_class": 2,
+   "seconds": 0.17404850001912564
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 39,
+   "label": 1,
+   "output": "model",
+   "bound": 3.872538066224254e-05,
+   "real": 0.0,
+   "fp_allowance": 3.872538066224249e-05,
+   "found": 8.881784197001252e-16,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 5.9467401282373106e-05,
+    "interval-separate": 24.077823321250346
+   },
+   "certified_class": 1,
+   "seconds": 0.1788585000031162
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 39,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.21791662744855633,
+   "real": 0.0,
+   "fp_allowance": 0.21791662744855606,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.8428957961351332,
+    "interval-separate": 51.235897497978314
+   },
+   "certified_class": 1,
+   "seconds": 0.18279779999284074
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 40,
+   "label": 1,
+   "output": "model",
+   "bound": 0.0003685566699186395,
+   "real": 0.0,
+   "fp_allowance": 0.00036855666991863904,
+   "found": 3.637978807091713e-12,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0020470052619178183,
+    "interval-separate": 22.268886785609546
+   },
+   "certified_class": 1,
+   "seconds": 0.19397600000957027
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 40,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.16331465968694373,
+   "real": 0.0,
+   "fp_allowance": 0.1633146596869435,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.334895255941379,
+    "interval-separate": 47.04406685838676
+   },
+   "certified_class": 1,
+   "seconds": 0.172472000005655
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 41,
+   "label": 7,
+   "output": "model",
+   "bound": 0.0001480001677127556,
+   "real": 0.0,
+   "fp_allowance": 0.0001480001677127554,
+   "found": 9.094947017729282e-13,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0005471842411383668,
+    "interval-separate": 22.114880880455885
+   },
+   "certified_class": 7,
+   "seconds": 0.180253200000152
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 41,
+   "label": 7,
+   "output": "logits",
+   "bound": 0.1987017318743687,
+   "real": 0.0,
+   "fp_allowance": 0.19870173187436846,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.1500233133338646,
+    "interval-separate": 45.70489664107425
+   },
+   "certified_class": 7,
+   "seconds": 0.1857795999967493
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 42,
+   "label": 4,
+   "output": "model",
+   "bound": 0.0007468093621053889,
+   "real": 0.0,
+   "fp_allowance": 0.000746809362105388,
+   "found": 1.4551915228366852e-11,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.001676134739476509,
+    "interval-separate": 22.56662397943199
+   },
+   "certified_class": 4,
+   "seconds": 0.20246070000575855
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 42,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.23286769248522746,
+   "real": 0.0,
+   "fp_allowance": 0.23286769248522718,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.843929554096999,
+    "interval-separate": 47.06248806945728
+   },
+   "certified_class": 4,
+   "seconds": 0.16966709998087026
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 43,
+   "label": 2,
+   "output": "model",
+   "bound": 2.7338255135644455e-05,
+   "real": 0.0,
+   "fp_allowance": 2.733825513564442e-05,
+   "found": 7.105427357601002e-15,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 3.822544175139502e-05,
+    "interval-separate": 24.008387432587725
+   },
+   "certified_class": 2,
+   "seconds": 0.1728229000000283
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 43,
+   "label": 2,
+   "output": "logits",
+   "bound": 0.19689108998941154,
+   "real": 0.0,
+   "fp_allowance": 0.1968910899894113,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.7982471716561212,
+    "interval-separate": 50.18111793168238
+   },
+   "certified_class": 2,
+   "seconds": 0.17788479998125695
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 44,
+   "label": 3,
+   "output": "model",
+   "bound": 0.0008351618351221793,
+   "real": 0.0,
+   "fp_allowance": 0.0008351618351221782,
+   "found": 1.4551915228366852e-11,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0025129567777981555,
+    "interval-separate": 23.92694954468251
+   },
+   "certified_class": 3,
+   "seconds": 0.1830584999988787
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 44,
+   "label": 3,
+   "output": "logits",
+   "bound": 0.21074488445764533,
+   "real": 0.0,
+   "fp_allowance": 0.21074488445764508,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.9296289464461533,
+    "interval-separate": 50.093247222916006
+   },
+   "certified_class": 3,
+   "seconds": 0.16690760001074523
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 45,
+   "label": 5,
+   "output": "model",
+   "bound": 0.0004122544025333273,
+   "real": 0.0,
+   "fp_allowance": 0.0004122544025333268,
+   "found": 3.637978807091713e-12,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.0015547087876138493,
+    "interval-separate": 21.57833028050288
+   },
+   "certified_class": 5,
+   "seconds": 0.18095569999422878
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 45,
+   "label": 5,
+   "output": "logits",
+   "bound": 0.20683986759870515,
+   "real": 0.0,
+   "fp_allowance": 0.2068398675987049,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.2164637136137166,
+    "interval-separate": 43.569761299131436
+   },
+   "certified_class": 5,
+   "seconds": 0.17268310001236387
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 46,
+   "label": 1,
+   "output": "model",
+   "bound": 0.003721751294395498,
+   "real": 0.0,
+   "fp_allowance": 0.0037217512943954934,
+   "found": 5.820766091346741e-11,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.012005678308218078,
+    "interval-separate": 21.063753795833275
+   },
+   "certified_class": 1,
+   "seconds": 0.19202580000273883
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 46,
+   "label": 1,
+   "output": "logits",
+   "bound": 0.21634897551971746,
+   "real": 0.0,
+   "fp_allowance": 0.21634897551971718,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.97906151414474,
+    "interval-separate": 44.609185149425215
+   },
+   "certified_class": 1,
+   "seconds": 0.17872240001452155
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 47,
+   "label": 2,
+   "output": "model",
+   "bound": 4.1003657741481174e-05,
+   "real": 0.0,
+   "fp_allowance": 4.100365774148112e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 9.132931410867704e-05,
+    "interval-separate": 25.088007097644017
+   },
+   "certified_class": 2,
+   "seconds": 0.1738527000125032
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 47,
+   "label": 2,
+   "output": "logits",
+   "bound": 0.19145502077061746,
+   "real": 0.0,
+   "fp_allowance": 0.1914550207706172,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.9256721987835833,
+    "interval-separate": 52.618154961763864
+   },
+   "certified_class": 2,
+   "seconds": 0.16720140000688843
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 48,
+   "label": 4,
+   "output": "model",
+   "bound": 2.0753830236744014e-05,
+   "real": 0.0,
+   "fp_allowance": 2.0753830236743987e-05,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 3.645059665760833e-06,
+    "interval-separate": 20.893123951444462
+   },
+   "certified_class": 4,
+   "seconds": 0.1814726000011433
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 48,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.29541059770308903,
+   "real": 0.0,
+   "fp_allowance": 0.29541059770308864,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.4657837666761127,
+    "interval-separate": 42.27303564555354
+   },
+   "certified_class": 4,
+   "seconds": 0.18739669999922626
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 49,
+   "label": 4,
+   "output": "model",
+   "bound": 4.420905636914902e-05,
+   "real": 0.0,
+   "fp_allowance": 4.420905636914897e-05,
+   "found": 5.551115123125783e-17,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 5.4736416771915935e-05,
+    "interval-separate": 17.68232516296637
+   },
+   "certified_class": 4,
+   "seconds": 0.17926420000731014
+  },
+  {
+   "eps_pixels": 0.01,
+   "image": 49,
+   "label": 4,
+   "output": "logits",
+   "bound": 0.2269409304165384,
+   "real": 0.0,
+   "fp_allowance": 0.22694093041653812,
+   "found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.6445322233066453,
+    "interval-separate": 36.72984278191669
+   },
+   "certified_class": 4,
+   "seconds": 0.17041940000490285
+  }
+ ],
+ "summary": [
+  {
+   "output": "probabilities",
+   "eps_pixels": 0.0,
+   "images": 50,
+   "violations": 0,
+   "certified": 50,
+   "bound": 1.999916288611473e-05,
+   "real": 0.0,
+   "fp_allowance": 1.9999162886114708e-05,
+   "found": 0.0,
+   "real_over_found": Infinity,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 3.2639172092141696e-15,
+    "interval-separate": 3.2699148479665803e-15
+   },
+   "seconds": 0.17168559999845456
+  },
+  {
+   "output": "probabilities",
+   "eps_pixels": 0.01,
+   "images": 50,
+   "violations": 0,
+   "certified": 49,
+   "bound": 5.4912490404441535e-05,
+   "real": 0.0,
+   "fp_allowance": 5.491249040444147e-05,
+   "found": 9.094947017729282e-13,
+   "real_over_found": 0.0,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.00016200960216288183,
+    "interval-separate": 21.399199066959106
+   },
+   "seconds": 0.1822002499975497
+  },
+  {
+   "output": "logits",
+   "eps_pixels": 0.0,
+   "images": 50,
+   "violations": 0,
+   "certified": 50,
+   "bound": 0.2184082912726563,
+   "real": 0.0,
+   "fp_allowance": 0.218408291272656,
+   "found": 0.0,
+   "real_over_found": Infinity,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 1.4837228193473957e-10,
+    "interval-separate": 1.4865196994991994e-10
+   },
+   "seconds": 0.16019349999260157
+  },
+  {
+   "output": "logits",
+   "eps_pixels": 0.01,
+   "images": 50,
+   "violations": 0,
+   "certified": 49,
+   "bound": 0.22119387835075352,
+   "real": 0.0,
+   "fp_allowance": 0.22119387835075324,
+   "found": 0.0,
+   "real_over_found": Infinity,
+   "methods": {
+    "zonotope": 0.0,
+    "interval": 0.0,
+    "zonotope-separate": 0.8434126751160661,
+    "interval-separate": 44.17057372119007
+   },
+   "seconds": 0.174147300014738
+  }
+ ]
+}
