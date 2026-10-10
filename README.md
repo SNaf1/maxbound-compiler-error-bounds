@@ -21,11 +21,24 @@ print(bound.summary())
 `examples/quickstart.py` runs the same two lines on a Hugging Face model. To see each step of the analysis,
 turn on logging with `logging.basicConfig(level=logging.INFO)`; MaxBound reports to the `maxbound` logger.
 
-On a Hugging Face MNIST classifier with 8-bit weights, the real-arithmetic part of the bound on the logits is
-within 1.00x to 2.12x of the largest difference that sampling plus a gradient attack can find (medians over
-50 test images, for radii up to 0.01 in pixel units). Bounding each model separately with intervals is about
-630x looser at the largest radius. In 600 checks (8-bit quantization and `torch.compile`), no sample or attack
-exceeded the bound.
+**Results in brief** (Hugging Face MNIST classifier, 8-bit weights, 50 test images, radii up to 0.01 in pixel
+units; details in [Results](#results)):
+
+* The bound has two parts that are reported separately:
+  * the real-arithmetic part (the difference if the computer calculated exactly);
+  * a worst-case allowance for float32 rounding.
+* **On the logits, the real-arithmetic part is tight:** a median of 1.00x to 2.12x the largest difference that
+  sampling plus a gradient attack can find.
+* **The full bound is looser:** a median of about 8x on the logits (4x to 17x across images) and about 85x to
+  150x on the probabilities. The allowance assumes every rounding error goes the worst way, and it dominates.
+* Bounding each model separately with intervals is about 630x looser than the real-arithmetic part at the
+  largest radius.
+* In 600 checks (8-bit quantization and `torch.compile`), no sample or attack exceeded the bound.
+
+**Scope:** models that are a single chain of Linear, Conv2d, BatchNorm, ReLU, LeakyReLU, tanh, sigmoid, reshape
+and a final softmax, run in float32 or float64 on the CPU. Transformers (GELU, LayerNorm, attention, residual
+connections) are not supported yet; see [Limitations](#limitations) and, for where support would be added,
+[docs/WALKTHROUGH.md](docs/WALKTHROUGH.md#where-to-change-the-code).
 
 ## Contents
 
@@ -231,25 +244,30 @@ on the development CPU.
 |---|---|---|---|---|---|
 | `x1 + x2` vs `1.1 x1 + 0.9 x2` on `[0, 1]^2` | 0.1 | 0.1 | 0.1 | 0.1 | 2.0 |
 | `relu(x)` vs `relu(1.5 x)` on `[-1, 1]` | 0.5 | 0.5 | 0.5 | 1.0 | 1.5 |
-| a ReLU that switches on to off, or off to on, between the models | 4 | 4 | | | |
+| two ReLU neurons, one switching from on to off between the models, on `[1, 2]` | 4 | 4 | 4 | 4 | 5 |
+| the same with one neuron switching from off to on | 4 | 4 | 5 | 4 | 5 |
 
 **8-bit per-channel weight quantization, logits** ([results/mnist_quant8.md](results/mnist_quant8.md)):
 
-| eps | bound | real part | fp allowance | largest found | real / found | zonotope diff. | interval diff. | zonotope sep. | interval sep. |
-|---|---|---|---|---|---|---|---|---|---|
-| 0 | 0.229 | 0.0278 | 0.218 | 0.0278 | 1.00 | 0.0278 | 0.0278 | 0.0278 | 0.0278 |
-| 0.001 | 0.232 | 0.0295 | 0.219 | 0.0282 | 1.03 | 0.0295 | 0.0773 | 0.0347 | 4.58 |
-| 0.003 | 0.239 | 0.0354 | 0.219 | 0.0290 | 1.17 | 0.0354 | 0.187 | 0.0924 | 13.7 |
-| 0.01 | 0.280 | 0.0700 | 0.221 | 0.0324 | 2.12 | 0.0700 | 0.642 | 0.879 | 44.2 |
+| eps | bound | real part | fp allowance | largest found | real / found | bound / found | zonotope diff. | interval diff. | zonotope sep. | interval sep. |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 0 | 0.229 | 0.0278 | 0.218 | 0.0278 | 1.00 | 8.03 | 0.0278 | 0.0278 | 0.0278 | 0.0278 |
+| 0.001 | 0.232 | 0.0295 | 0.219 | 0.0282 | 1.03 | 7.97 | 0.0295 | 0.0773 | 0.0347 | 4.58 |
+| 0.003 | 0.239 | 0.0354 | 0.219 | 0.0290 | 1.17 | 7.92 | 0.0354 | 0.187 | 0.0924 | 13.7 |
+| 0.01 | 0.280 | 0.0700 | 0.221 | 0.0324 | 2.12 | 8.58 | 0.0700 | 0.642 | 0.879 | 44.2 |
+
+The two ratio columns are medians over images of the per-image ratio. "real / found" shows how tight the
+analysis is; "bound / found" shows the bound you actually get, which includes the worst-case rounding
+allowance (per image it ranges from 4.2x to 17.4x).
 
 **The same, probabilities (what the model returns):**
 
-| eps | bound | real part | fp allowance | largest found | zonotope diff. | interval diff. | zonotope sep. | interval sep. |
-|---|---|---|---|---|---|---|---|---|
-| 0 | 2.05e-5 | 4.32e-7 | 2.00e-5 | 1.19e-7 | 4.32e-7 | 4.32e-7 | 4.32e-7 | 4.32e-7 |
-| 0.001 | 2.11e-5 | 5.57e-7 | 2.05e-5 | 2.56e-7 | 5.57e-7 | 1.55e-4 | 7.02e-7 | 8.36e-3 |
-| 0.003 | 2.36e-5 | 9.81e-7 | 2.23e-5 | 3.58e-7 | 9.81e-7 | 0.0849 | 4.15e-6 | 6.42 |
-| 0.01 | 6.69e-5 | 1.19e-5 | 5.49e-5 | 5.96e-7 | 1.19e-5 | 0.31 | 1.67e-4 | 21.4 |
+| eps | bound | real part | fp allowance | largest found | real / found | bound / found | zonotope diff. | interval diff. | zonotope sep. | interval sep. |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 0 | 2.05e-5 | 4.32e-7 | 2.00e-5 | 1.19e-7 | 3.04 | 150 | 4.32e-7 | 4.32e-7 | 4.32e-7 | 4.32e-7 |
+| 0.001 | 2.11e-5 | 5.57e-7 | 2.05e-5 | 2.56e-7 | 2.40 | 92.1 | 5.57e-7 | 1.55e-4 | 7.02e-7 | 8.36e-3 |
+| 0.003 | 2.36e-5 | 9.81e-7 | 2.23e-5 | 3.58e-7 | 2.55 | 85.4 | 9.81e-7 | 0.0849 | 4.15e-6 | 6.42 |
+| 0.01 | 6.69e-5 | 1.19e-5 | 5.49e-5 | 5.96e-7 | 10.3 | 114 | 1.19e-5 | 0.31 | 1.67e-4 | 21.4 |
 
 The model is confident on these images, so the softmax bound (which uses `p(1 - p)`) makes the probability
 bounds 4,000 to 11,000 times smaller than the logit bounds (for example 2.05e-5 against 0.229 at eps = 0). Values above 1 in the last column show how loose naive
@@ -270,11 +288,14 @@ alone would have returned a wrong guarantee in those cases. With the allowance t
 * The compiled model is not bit-for-bit identical to the original. Its probabilities differed in 43 of 100
   checks (at most 3.0e-8). Its logits never differed in our checks: the generated code calls the same
   `addmm` matrix kernels, so the difference arises in Inductor's fused softmax kernel.
-* The differential analyses give a real-arithmetic part of exactly 0, since the real-number function is the
-  same. The whole bound is the two rounding allowances: a median of 2.0e-5 (eps = 0) and 5.5e-5 (eps = 0.01)
-  on the probabilities, and 0.22 on the logits.
-* The bound held in all 200 checks. Even the smallest bound is 438 times the largest deviation observed:
-  this is the price of the worst-case rounding analysis.
+* **This result rests on assumption A6.** We analyse the compiled model through its original graph, assuming
+  Inductor computes the same real-number function and only rounds differently. We support that with
+  Inductor's compile flags and the generated softmax code, not by verifying every generated kernel. Under A6,
+  the real-arithmetic part is 0 by construction, and the whole bound is the two rounding allowances: a median
+  of 2.0e-5 (eps = 0) and 5.5e-5 (eps = 0.01) on the probabilities, and 0.22 on the logits.
+* The bound held in all 200 checks, but it is very loose here. Even the smallest bound is 438 times the
+  largest deviation observed in any check. Per image the ratio is in the millions or more, because most observed
+  deviations are at the level of float32 noise. This is the price of the worst-case rounding analysis.
 * The separate analyses do not reach 0 here (0.84 on the logits at eps = 0.01 with zonotopes, 44.2 with
   intervals), which shows again why following the difference matters.
 

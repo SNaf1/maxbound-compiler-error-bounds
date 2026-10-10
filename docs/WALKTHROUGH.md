@@ -127,7 +127,7 @@ things, what can go wrong, and how each part is tested. The math and the soundne
 * `execution_allowance` walks one model's layers and tracks `a`, a bound on |float32 value - exact value|:
   each Linear/Conv adds Higham's dot-product rounding bound and carries the old error through `|W|`, ReLU
   carries it unchanged, LeakyReLU adds the rounding of its slope and of the multiplication, tanh/sigmoid
-  carry it with their Lipschitz constant and add their own rounding. BatchNorm is `_batchnorm_own`, which
+  carry it with their Lipschitz constant and add their own rounding. BatchNorm is `_batchnorm_terms`, which
   includes underflow of its precomputed scale. Softmax is `_softmax_terms` (derivation in DESIGN.md
   section 8).
 * Value sizes come from a zonotope analysis of that one model, which keeps the allowance as small as the

@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+    timeout-minutes: 30   # a full run took under 4 minutes, including the first Hugging Face download
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

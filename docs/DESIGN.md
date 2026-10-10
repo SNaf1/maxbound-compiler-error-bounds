@@ -342,11 +342,12 @@ never confirm one; they are the sanity check the task asks for.
 
 **Precision is lost:**
 * At neurons that can switch inside X: a fresh symbol replaces an exact form. On the MNIST model at
-  `eps = 0.01` the logit bound is about 2.1 times the largest difference found.
+  `eps = 0.01` the real-arithmetic part of the logit bound is about 2.1 times the largest difference found.
 * In the rounding allowance. The float32 bound assumes every rounding error lines up in the worst way.
-  At the logits of the MNIST model it is about 0.22. For `torch.compile`, whose difference from the
-  original is pure rounding, the bound (at least `1.3e-5` on the probabilities) is several hundred times
-  the largest deviation observed (`3.0e-8`).
+  At the logits of the MNIST model it is about 0.22. That makes the full logit bound a median of about 8 times
+  the largest difference found, and the full probability bound about 85 to 150 times. For `torch.compile`
+  the difference from the original is pure rounding under assumption A6, and the bound (at least `1.3e-5` on
+  the probabilities) is several hundred times the largest deviation observed (`3.0e-8`).
 * In the interval methods. They forget correlations, which is why they are kept only as baselines and
   cross-checks.
 

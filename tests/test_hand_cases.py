@@ -74,8 +74,13 @@ def test_relu_switching_cases_are_exact(case):
         a, b = _two_layer([[1.0], [1.0]], [[1.0, -1.0]]), _two_layer([[-1.0], [2.0]], [[1.0, -1.0]])
     else:
         a, b = _two_layer([[-1.0], [1.0]], [[1.0, 1.0]]), _two_layer([[1.0], [2.0]], [[1.0, 1.0]])
-    bound = MaxBound(a, b, Box(torch.tensor([1.0]), torch.tensor([2.0])), fp_model="real", method="zonotope")
+    bound = MaxBound(a, b, Box(torch.tensor([1.0]), torch.tensor([2.0])), fp_model="real")
     assert float(bound) == pytest.approx(4.0, abs=1e-12)
+    # the other analyses (README hand-case table): intervals lose the link between the two neurons
+    expected = {"on-off": {"zonotope": 4, "interval": 4, "zonotope-separate": 4, "interval-separate": 5},
+                "off-on": {"zonotope": 4, "interval": 5, "zonotope-separate": 4, "interval-separate": 5}}[case]
+    for name, value in expected.items():
+        assert bound.method_bounds[name] == pytest.approx(value, abs=1e-9), name
 
 
 @pytest.mark.parametrize("act", ["relu", "leaky_relu", "tanh", "sigmoid"])
