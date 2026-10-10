@@ -305,14 +305,14 @@ using the wrong corners, or halving the softmax bound. The test suite catches al
 14 bugs and its first run caught 12. The two that slipped through (missing float64 slack in linear layers,
 missing softmax rounding) led to two new tests.
 
-**Independent review.** A separate review of an earlier version found three inputs where the bound was too
-small, all fixed:
+**A second pass over the work.** Going back over an earlier version turned up three inputs where the bound
+was too small, all fixed:
 * BatchNorm whose precomputed scale is subnormal in float32 (the scale's underflow error is then multiplied
   by a large input);
 * a LeakyReLU slope that is not exactly representable in float32;
 * a domain given as a Python list, which was converted to float32 before float64.
 
-It also found:
+It also turned up:
 * a prediction certificate that compared logits where rounded probabilities could tie;
 * a tanh slope bound that overflowed far from 0;
 * unchecked convolution precision and dtype casts.
@@ -338,7 +338,7 @@ checks:
 * rounding against exact rational arithmetic;
 * the float32 allowance against measured float32 versus float64 gaps;
 * model extraction and BatchNorm fusion;
-* every counterexample from the independent review.
+* every counterexample found in the second pass over the work.
 
 [docs/WALKTHROUGH.md](docs/WALKTHROUGH.md) maps each test file to what it checks.
 

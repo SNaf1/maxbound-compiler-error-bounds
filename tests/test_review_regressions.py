@@ -1,5 +1,5 @@
-"""Counterexamples found in an independent review (each one broke an earlier
-version of the package). They stay here so the bugs cannot come back."""
+"""Counterexamples found in a second pass over the work (each one broke an
+earlier version of the package). They stay here so the bugs cannot come back."""
 import copy
 from decimal import Decimal, getcontext
 

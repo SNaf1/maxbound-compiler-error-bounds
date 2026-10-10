@@ -214,7 +214,7 @@ things, what can go wrong, and how each part is tested. The math and the soundne
 | `test_graph.py` | extraction of sequential and functional models, rejection of unsupported ones, fallback for misaligned models, BatchNorm fusion verified |
 | `test_domain.py`, `test_compilers.py` | domains and compile passes |
 | `test_real_models.py` | the Hugging Face model (marked `network`), `torch.compile` (needs a C++ compiler), the experiment summary |
-| `test_review_regressions.py` | the counterexamples from an independent review, which broke an earlier version: subnormal BatchNorm scale, LeakyReLU slope rounding, list domains, a softmax tie in the certificate, tanh/sigmoid slopes far in the tail, reduced-precision convolution, dtype-changing softmax, float64 points |
+| `test_review_regressions.py` | the counterexamples found in a second pass over the work, which broke an earlier version: subnormal BatchNorm scale, LeakyReLU slope rounding, list domains, a softmax tie in the certificate, tanh/sigmoid slopes far in the tail, reduced-precision convolution, dtype-changing softmax, float64 points |
 | `tools/mutation_check.py` | plants 18 known soundness bugs one at a time and checks that the suite catches each (`results/mutation_check.md`) |
 
 ## Questions to expect, with short answers
