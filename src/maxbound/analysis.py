@@ -144,11 +144,14 @@ def _act_diff(op: ActOp, z: Zonotope, delta: Zonotope, zp: Zonotope,
         f_on_off = zt.sub(zt.scale(zp, a), z)                        # a z' - z
         f_off_on = zt.sub(zp, zt.scale(z, a))                        # z' - a z
         f_box = zt.fresh(torch.where(exact, 0.0, box.center()), torch.where(exact, 0.0, box.radius()), ~exact, pool)
-        out = zt.select(both_on, delta,
-              zt.select(both_off, f_both_off,
-              zt.select(on_off, f_on_off,
-              zt.select(off_on, f_off_on, f_box))))
-        return zt.select(zero, nothing, out)
+        # start from the enclosing range for every neuron, then overwrite the exact cases
+        # (a later line wins where cases overlap, e.g. when z is exactly 0)
+        out = f_box
+        out = zt.select(off_on, f_off_on, out)        # off in the original, on in the compiled model
+        out = zt.select(on_off, f_on_off, out)        # on in the original, off in the compiled model
+        out = zt.select(both_off, f_both_off, out)    # off in both
+        out = zt.select(both_on, delta, out)          # on in both: the difference passes through
+        return zt.select(zero, nothing, out)          # no difference coming in: none going out
     # tanh / sigmoid: sigma(z + delta) - sigma(z) = sigma'(xi) delta = kappa delta + (sigma'(xi) - kappa) delta
     slope = deriv_range(op.kind, hull(iz, izp))
     kappa = 0.5 * (slope.lo + slope.hi)
